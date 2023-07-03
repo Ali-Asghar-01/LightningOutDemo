@@ -5,12 +5,14 @@
         console.log('::::Ali')
         // const appName = 'c:OptOutFormWrapper';
         $Lightning.use("auraapp:lightningOutGuest",    // name of the Lightning app
-            function() {                  
+            function() {   
+                console.log('::::Ali')
                 $Lightning.createComponent(
                    "lightning:flow", // top-level component of your app
                     { },                  // attributes to set on the component when created
                     "lightningLocator",   // the DOM location to insert the component
                     function(cmp) {
+                        console.log('::::Ali')
                         console.log('Hi from callback');// callback when component is created and active on the page
                         cmp.startFlow('Inbound_New_Guest_Appointment');
                     }
