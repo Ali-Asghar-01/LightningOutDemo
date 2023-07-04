@@ -5,19 +5,29 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>LIG Boilerplate</title>
-     <script src="https://beyondvision2.lightning.force.com/lightning/lightning.out.js"></script>
+  <style>
+        .slds-visual-picker_vertical .slds-visual-picker__figure {
+            height: inherit !important;
+        }
+
+        .runtime_appointmentbookingFlowLocation .slds-visual-picker_vertical {
+            display: inline-flex !important;
+        }
+</style>
+     <script src="	https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
      <script>
 
       function init(){
     let inputVariables = [];
     $Lightning.use("c:auraapp", function() {
-        $Lightning.createComponent("lightning:flow", {},
+        $Lightning.createComponent(
+           "lightning:flow", { },
             "container",
             function (component) {
-                component.startFlow("Survey_Customers", inputVariables);
+                component.startFlow("Survey_Customers");
             })
         ;},
-        'https://beyondvision2.lightning.force.com/'
+        'https://beyondvision2.my.site.com'
     );
       }
 </script>
