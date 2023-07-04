@@ -121,7 +121,7 @@
 
 
 
-
+<!-- 
 
 <html>
 
@@ -162,6 +162,37 @@
             lightningEndpoint
     );
 
+
+ -->
+
+
+
+
+
+
+<head></head>
+<body>
+    <script src="https://beyondvision2.my.site.com/vforcesite/lightning/lightning.out.js"></script>
+    <script>
+        $Lightning.use("c:auraapp:lightningOutGuest",    // name of the Lightning app
+            function() {                  
+                $Lightning.createComponent(
+                   "lightning:flow", // top-level component of your app
+                    { },                  // attributes to set on the component when created
+                    "lightningLocator",   // the DOM location to insert the component
+                    function(cmp) {
+                        console.log('Hi from callback');// callback when component is created and active on the page
+                        cmp.startFlow('Survey_Customers');
+                    }
+                );
+            }, 'https://beyondvision2.my.site.com/vforcesite/'  // Community endpoint
+        );
+    </script>
+
+<div id="lightningLocator">
+  <p>Lightning Component mentioned in the Script is invoked from here</p>
+</div>
+</body>
 
   </script>
 
