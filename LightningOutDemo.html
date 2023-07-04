@@ -173,7 +173,7 @@
 <html>
     <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
     <script>
-        $Lightning.use("auraapp:lightningOutGuest",    // name of the Lightning app
+        $Lightning.use("Runtime_AppointmentBooking:lightningOutGuest",    // name of the Lightning app
             function() {                  
                 $Lightning.createComponent(
                    "lightning:flow", // top-level component of your app
@@ -184,7 +184,7 @@
                         cmp.startFlow('Survey_Customers');
                     }
                 );
-            }, 'https://beyondvision2.my.site.com/lightningout/'  // Community endpoint
+            }, 'https://beyondvision2.my.site.com'  // Community endpoint
         );
     </script>
 
