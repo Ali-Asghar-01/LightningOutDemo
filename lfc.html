@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>LIG Boilerplate</title>
+  <style>
+        .slds-visual-picker_vertical .slds-visual-picker__figure {
+            height: inherit !important;
+        }
 
+        .runtime_appointmentbookingFlowLocation .slds-visual-picker_vertical {
+            display: inline-flex !important;
+        }
+</style>
+     <script src="https://lifestylecommunities--scheddev.sandbox.my.site.com/thesource/lightning/lightning.out.js"></script>
+     <script>
+
+      // function init(){
+    let inputVariables = [];
+    $Lightning.use("c:AppointmentBookingApp", function() {
+        $Lightning.createComponent(
+           "lightning:flow", { },
+            "container",
+            function (component) {
+                component.startFlow("Scheduled_Flow_Appointment_Booking");
+            })
+        ;},
+        'https://lifestylecommunities--scheddev.sandbox.my.site.com/thesource'
+    );
+      // }
+</script>
+</head>
+  <body >
+<!--    onload="init()" -->
+    <p>It works !!!</p>
+     <div id='container'>
+
+     </div>
+
+ </body>
+ </html>
