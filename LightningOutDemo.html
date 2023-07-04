@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <script src="https://beyondvision2.lightning.force.com/lightning/lightning.out.js"></script>
     <script>
         console.log('::::Ali')
@@ -23,7 +23,7 @@
   <p>Lightning Component mentioned in the Script is invoked from here</p>
 </div>
 </html>
-
+ -->
 
 
 
@@ -114,3 +114,56 @@
 
 
 </html> -->
+
+
+
+
+
+
+
+
+
+<html>
+
+<style>
+
+  a {
+    color: orange;
+  }
+
+</style>
+
+<script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c:auraapp';
+    const componentName = 'c:optoutForm';
+    const lightningEndpoint = 'https://beyondvision2.my.site.com/';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+
+
+  </script>
+
+
+</html>
