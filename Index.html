@@ -1,24 +1,31 @@
-<head></head>
-<body>
-    <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
-    <script>
-         const appName = 'c:auraapp';
-        $Lightning.use("c:auraapp:lightningOutGuest",    // name of the Lightning app
-            function() {                  
-                $Lightning.createComponent(
-                   "lightning:flow", // top-level component of your app
-                    { },                  // attributes to set on the component when created
-                    "lightningLocator",   // the DOM location to insert the component
-                    function(cmp) {
-                        console.log('Hi from callback');// callback when component is created and active on the page
-                        cmp.startFlow('Survey_Customers');
-                    }
-                );
-            }, 'https://beyondvision2.my.site.com/'  // Community endpoint
-        );
-    </script>
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>LIG Boilerplate</title>
+     <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
+     <script>
 
-<div id="lightningLocator">
-  <p>Lightning Component mentioned in the Script is invoked from here</p>
-</div>
-</body>
+    let inputVariables = [];
+    $Lightning.use("c:auraapp", function() {
+        $Lightning.createComponent("lightning:flow", {},
+            "container",
+            function (component) {
+                component.startFlow("Survey_Customers", inputVariables);
+            })
+        ;},
+        'https://beyondvision2.my.site.com/'
+    );
+
+</script>
+</head>
+  <body onload="init()">
+    <p>It works !!!</p>
+     <div id='container'>
+
+     </div>
+
+ </body>
+ </html>
