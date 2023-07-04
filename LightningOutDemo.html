@@ -136,7 +136,7 @@
 <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
 
 <div data-lightning-out="true">hello123</div>
-
+<div id="lightning">hello456</div>
   <script>
     console.log(':::: 1 ')
     const appName = 'c:auraapp';
@@ -148,20 +148,32 @@
     };
       console.log('::::targetElement ' + JSON.stringify(targetElement))
     console.log(':::: 2 ')
-    $Lightning.use(
-            appName,
-            function (){
-              $Lightning.createComponent(
-                      componentName,
-                      componentAttributes,
-                      targetElement,
-                      function (cmp){
-                        console.log('lightning component created');
-                      }
-              );
-            },
-            lightningEndpoint
-    );
+    // $Lightning.use(
+    //         appName,
+    //         function (){
+    //           $Lightning.createComponent(
+    //                   componentName,
+    //                   componentAttributes,
+    //                   targetElement,
+    //                   function (cmp){
+    //                     console.log('lightning component created');
+    //                   }
+    //           );
+    //         },
+    //         lightningEndpoint
+    // );
+        $Lightning.use(appName, function() {
+        $Lightning.createComponent(componentName, 
+              "lightning",
+                componentAttributes,
+              function(cmp) {
+                console.log("LWC component was created");
+                // do some stuff
+              }
+          );
+        },
+       lightningEndpoint
+      );
   </script>
 </html>
 
