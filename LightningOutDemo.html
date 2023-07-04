@@ -148,32 +148,32 @@
     };
       console.log('::::targetElement ' + JSON.stringify(targetElement))
     console.log(':::: 2 ')
-    // $Lightning.use(
-    //         appName,
-    //         function (){
-    //           $Lightning.createComponent(
-    //                   componentName,
-    //                   componentAttributes,
-    //                   targetElement,
-    //                   function (cmp){
-    //                     console.log('lightning component created');
-    //                   }
-    //           );
-    //         },
-    //         lightningEndpoint
-    // );
-        $Lightning.use(appName, function() {
-        $Lightning.createComponent(componentName, 
-              "lightning",
-                componentAttributes,
-              function(cmp) {
-                console.log("LWC component was created");
-                // do some stuff
-              }
-          );
-        },
-       lightningEndpoint
-      );
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+      //   $Lightning.use(appName, function() {
+      //   $Lightning.createComponent(componentName, 
+      //         "lightning",
+      //           componentAttributes,
+      //         function(cmp) {
+      //           console.log("LWC component was created");
+      //           // do some stuff
+      //         }
+      //     );
+      //   },
+      //  lightningEndpoint
+      // );
   </script>
 </html>
 
