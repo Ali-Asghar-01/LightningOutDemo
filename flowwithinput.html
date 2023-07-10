@@ -2,6 +2,9 @@
 <body>
     <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
     <script>
+        const previousPageUrl = document.referrer;
+        console.log(`Previously visited page URL: ${previousPageUrl}`);
+        console.log(`Current visited page URL: ${window.location.href}`);
         let inputVariables = [{ name : "community",
                              type : "String",
                              value : "com"}];
