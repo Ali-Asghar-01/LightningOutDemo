@@ -2,9 +2,9 @@
 <body>
     <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
     <script>
-        let inputVariables = { name : "community",
+        let inputVariables = [ name : "community",
                              type : "String",
-                             value : "com"};
+                             value : "com"];
         $Lightning.use("c:auraapp",    // name of the Lightning app
             function() {                  
                 $Lightning.createComponent(
