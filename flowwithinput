@@ -1,8 +1,8 @@
 <head></head>
 <body>
-    <script src="https://lifestylecommunities--scheddev.sandbox.my.site.com/lightning/lightning.out.js"></script>
+    <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
     <script>
-        $Lightning.use("c:AppointmentBookingApp",    // name of the Lightning app
+        $Lightning.use("c:auraapp",    // name of the Lightning app
             function() {                  
                 $Lightning.createComponent(
                    "lightning:flow", // top-level component of your app
@@ -10,10 +10,10 @@
                     "lightningLocator",   // the DOM location to insert the component
                     function(cmp) {
                         console.log('Hi from callback');// callback when component is created and active on the page
-                        cmp.startFlow('Scheduled_Flow_Appointment_Booking');
+                        cmp.startFlow('Survey_Customers');
                     }
                 );
-            }, 'https://lifestylecommunities--scheddev.sandbox.my.site.com/appointmentbooking'  // Community endpoint
+            }, 'https://beyondvision2.my.site.com'  // Community endpoint
         );
     </script>
 
