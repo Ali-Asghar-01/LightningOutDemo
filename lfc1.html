@@ -3,16 +3,20 @@
     <script src="https://lifestylecommunities--scheddev.sandbox.my.site.com/lightning/lightning.out.js"></script>
     <script>
         var url = "https://www.lifestylecommunities.com.au/communities/lifestyle-ridgelea";
-
-        // Extract the last parameter containing "lifestyle"
-        var lastParameter = url.match(/\/lifestyle-(.*)$/i)[1];
         
-        // Remove dashes and format the parameter
-        var formattedParameter = lastParameter.replace(/-/g, ' ').replace(/^(lifestyle )?/i, '').replace(/\b\w/g, function (match) {
+        var match = url.match(/\/lifestyle-(.*)$/i);
+        var formattedParameter = "";
+        
+        if (match) {
+          var lastParameter = match[1].replace(/-/g, ' ');
+          formattedParameter = lastParameter.replace(/\b\w/g, function(match) {
             return match.toUpperCase();
-        });
+          });
+          formattedParameter = "Lifestyle " + formattedParameter;
+        }
         
-        console.log(formattedParameter); 
+        console.log(formattedParameter);
+
         let inputVariables = [{ name : "communityName",
                              type : "String",
                              value : formattedParameter}];
