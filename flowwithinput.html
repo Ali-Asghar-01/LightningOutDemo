@@ -2,12 +2,11 @@
 <body>
     <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
     <script>
-        const previousPageUrl = document.referrer;
-        console.log(`Previously visited page URL: ${previousPageUrl}`);
+        const currentPageUrl = window.location.href;
         console.log(`Current visited page URL: ${window.location.href}`);
         let inputVariables = [{ name : "community",
                              type : "String",
-                             value : "com"}];
+                             value : currentPageUrl}];
         $Lightning.use("c:auraapp",    // name of the Lightning app
             function() {                  
                 $Lightning.createComponent(
