@@ -2,13 +2,24 @@
 <body>
     <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
     <script>
-        const currentPageUrl = window.location.href;
-        var parts = currentPageUrl.split('/');
-        var communityName =  parts[parts.length - 1];
-        console.log(`Current visited page URL: ${window.location.href}`);
+        // const currentPageUrl = window.location.href;
+        // var parts = currentPageUrl.split('/');
+        // var communityName =  parts[parts.length - 1];
+        // console.log(`Current visited page URL: ${window.location.href}`);
+        var url = "https://www.lifestylecommunities.com.au/communities/lifestyle-ridgelea";
+
+        // Extract the last parameter containing "lifestyle"
+        var lastParameter = url.match(/\/lifestyle-(.*)$/i)[1];
+        
+        // Remove dashes and format the parameter
+        var formattedParameter = lastParameter.replace(/-/g, ' ').replace(/^(lifestyle )?/i, '').replace(/\b\w/g, function (match) {
+            return match.toUpperCase();
+        });
+        
+        console.log(formattedParameter); 
         let inputVariables = [{ name : "community",
                              type : "String",
-                             value : currentPageUrl}];
+                             value : formattedParameter}];
         $Lightning.use("c:auraapp",    // name of the Lightning app
             function() {                  
                 $Lightning.createComponent(
