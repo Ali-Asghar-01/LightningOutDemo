@@ -3,7 +3,7 @@
     <script src="https://beyondvision2.my.site.com/lightning/lightning.out.js"></script>
     <script>
         const currentPageUrl = window.location.href;
-        var parts = url.split('/');
+        var parts = currentPageUrl.split('/');
         var communityName =  parts[parts.length - 1];
         console.log(`Current visited page URL: ${window.location.href}`);
         let inputVariables = [{ name : "community",
