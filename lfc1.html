@@ -2,7 +2,7 @@
 <body>
     <script src="https://lifestylecommunities--scheddev.sandbox.my.site.com/lightning/lightning.out.js"></script>
     <script>
-        var url = "https://www.lifestylecommunities.com.au/communities/lifestyle-st-leonards-the-shores";
+        var url = "https://www.lifestylecommunities.com.au/communities/lifestyle-bellarine";
         
         var match = url.match(/\/lifestyle-(.*)$/i);
         var formattedParameter = "";
@@ -28,7 +28,7 @@
                     "lightningLocator",   // the DOM location to insert the component
                     function(cmp) {
                         console.log('Hi from callback');// callback when component is created and active on the page
-                        cmp.startFlow('Schedule_Flow_Appointment_Booking_Ali',inputVariables);
+                        cmp.startFlow('Scheduled_Flow_Appointment_Booking',inputVariables);
                     }
                 );
             }, 'https://lifestylecommunities--scheddev.sandbox.my.site.com/appointmentbooking'  // Community endpoint
