@@ -2,11 +2,12 @@
 <body>
     <script src="https://lifestylecommunities--scheddev.sandbox.my.site.com/lightning/lightning.out.js"></script>
     <script>
+        // 1st Option: Get URL by window.location.href. This will get the community name and send it to the flow.
         // var url = window.location.href;
         var url = "https://www.lifestylecommunities.com.au/communities/lifestyle-bellarine";
-        console.log('::: url ' + url);
-        
         var match = url.match(/\/lifestyle-(.*)$/i);
+
+        //2nd Option: You can directly set the value(community name) in the formattedParameter. Then there is no need for IF condition.
         var formattedParameter = "";
         
         if (match) {
@@ -29,7 +30,7 @@
                     { },                  // attributes to set on the component when created
                     "lightningLocator",   // the DOM location to insert the component
                     function(cmp) {
-                        console.log('Hi from callback');// callback when component is created and active on the page
+                        //console.log('Hi from callback');// callback when component is created and active on the page
                         cmp.startFlow('Scheduled_Flow_Appointment_Booking',inputVariables);
                     }
                 );
@@ -37,7 +38,6 @@
         );
     </script>
 
-<div id="lightningLocator">
-  <p>Lightning Component mentioned in the Script is invoked from here.</p>
-</div>
+    <div id="lightningLocator">
+    </div>
 </body>
