@@ -2,12 +2,12 @@
 <body>
     <script src="https://lifestylecommunities--scheddev.sandbox.my.site.com/lightning/lightning.out.js"></script>
     <script>
-        var formattedParameter = "Lifestyle Bellarine";
-        console.log(formattedParameter);
+        var communityName = "Lifestyle Bellarine";
+        console.log(communityName);
 
         let inputVariables = [{ name : "communityName",
                              type : "String",
-                             value : formattedParameter}];
+                             value : communityName}];
         $Lightning.use("c:AppointmentBookingApp",    // name of the Lightning app
             function() {                  
                 $Lightning.createComponent(
