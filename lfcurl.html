@@ -1,1 +1,41 @@
+<head></head>
+<body>
+    <script src="https://lifestylecommunities--scheddev.sandbox.my.site.com/lightning/lightning.out.js"></script>
+    <script>
+      
+        // var url = window.location.href;
+        var url = "https://www.lifestylecommunities.com.au/communities/lifestyle-bellarine";
+        var match = url.match(/\/lifestyle-(.*)$/i);
+        var formattedParameter = "";
+        
+        if (match) {
+          var lastParameter = match[1].replace(/-/g, ' ');
+          formattedParameter = lastParameter.replace(/\b\w/g, function(match) {
+            return match.toUpperCase();
+          });
+          formattedParameter = "Lifestyle " + formattedParameter;
+        }
+        
+        console.log(formattedParameter);
 
+        let inputVariables = [{ name : "communityName",
+                             type : "String",
+                             value : formattedParameter}];
+        $Lightning.use("c:AppointmentBookingApp",    // name of the Lightning app
+            function() {                  
+                $Lightning.createComponent(
+                   "lightning:flow", // top-level component of your app
+                    { },                  // attributes to set on the component when created
+                    "lightningLocator",   // the DOM location to insert the component
+                    function(cmp) {
+                        //console.log('Hi from callback');// callback when component is created and active on the page
+                        cmp.startFlow('Scheduled_Flow_Appointment_Booking',inputVariables);
+                    }
+                );
+            }, 'https://lifestylecommunities--scheddev.sandbox.my.site.com/appointmentbooking'  // Community endpoint
+        );
+    </script>
+
+    <div id="lightningLocator">
+    </div>
+</body>
